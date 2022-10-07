@@ -1,4 +1,4 @@
-import calculator
+from calc import *
 
 
 def ask_name():
@@ -12,11 +12,12 @@ def greet():
     print("Welcome to the Calculator App. You can use this calculator to add, subtract, multiply or divide two "
           "digits.\nYou can quit the program at "
           "any moment by pressing Ctrl + C. Enjoy!")
+    return name
 
 
 try:
-    greet()
-    calculator.calculation(calculator.select_digit_one(), calculator.operation_select(), calculator.select_digit_two())
+    user_name = greet()
+    calculation(select_digit_one(), operation_select(), select_digit_two(), user_name)
 
 except KeyboardInterrupt:
-    print ("\nYou have terminated the execution. Goodbye!")
+    print("\nYou have terminated the execution. Goodbye!")
